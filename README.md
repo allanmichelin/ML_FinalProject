@@ -88,7 +88,7 @@ The SVC with the highest accuracy had a gamma value of 0.001 and c value of 1.
 ### Using Principle Components
 
 Using the optimal conditions for SVC found previously, we observed the relationship between the number of Principle Components (PCs) used and its accuracy.
-In general, as the number of PCs increased, accuracy increased. However, using the first 13 PCs seemed to have a minor improvement over using all 14; an accuracy of 51.6% against 51.2%. Whilst this change may be too minor to deduce anything conclusive from, it may also indicate that there is an input feature that is being harmful to the accuracy of the system.
+In general, as the number of PCs increased, accuracy increased. However, using the first 13 PCs seemed to have a minor improvement over using all 14; an accuracy of 51.6% against 51.2%. Whilst this change may be too minor to deduce anything conclusive from, it may also provide evidence for using the given top 13 features instead of 14.
 
 ## Neural Network
 
