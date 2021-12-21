@@ -29,6 +29,12 @@ The dataset also had the following metrics and labels for each song:
 -   Mode
 -   Speechiness
 -   Acousticness
+-   Valence
+-   Liveness
+-   Tempo
+-   Time Signature
+-   Instrumentalness
+-   Duration in min/ms
 
 The baseline we used was the accuracy which was 49% from the hackathon using a Logistic Regression model. We decided to experiment with different models and see how best we can improve this accuracy and the factors that affect it based on what we learnt in class.
 
