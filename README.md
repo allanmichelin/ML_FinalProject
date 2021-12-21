@@ -5,17 +5,32 @@
 For this project we wanted to see how we can apply what we have learnt in class to a real world problem.
 We ended up choosing music genre classification because it is quite a relevant task in industry where companies like Spotify and Apple Music are trying to automatically classify songs into various genres.
 
-We decided to use a project from ---(Allan) hackathon where a basic Logistic Regression model was used to classify songs. The dataset consisted of ---(Allan) songs from the following genres:
+We decided to use a project from kaggle where a basic Logistic Regression model was used to classify songs in a submission for a hackathon competition. The dataset consisted of 15129 songs from the following genres:
 
-- pop
-- etc(Allan)
+-   Pop
+-   Acoustic/Folk
+-   Alt Music
+-   Blues
+-   Bollywood
+-   Country
+-   Hip Hop
+-   Indie Alt
+-   Instrumental
+-   Metal
 
 The dataset also had the following metrics and labels for each song:
 
-- Artist name
-- etc(Allan)
+-   Artist name
+-   Popularity
+-   Danceability
+-   Energy
+-   Key
+-   Loudness
+-   Mode
+-   Speechiness
+-   Acousticness
 
-The baseline we used was the accuracy which was --- (Allan) from the hackathon using a Logistic Regression model. We decided to experiment with different models and see how best we can improve this accuracy and the factors that affect it based on what we learnt in class.
+The baseline we used was the accuracy which was 49% from the hackathon using a Logistic Regression model. We decided to experiment with different models and see how best we can improve this accuracy and the factors that affect it based on what we learnt in class.
 
 ## Preprocessing
 
@@ -53,3 +68,13 @@ With this we conducted one more test to see which features were the most importa
 14. time_signature
 
 By testing using the top feature and included the rest, we found that we needed the first 13 to achieve a high enough accuracy (50%) as can be seen in the notebook(add link to notebook here).
+
+## Neural Network
+
+A nerual network was then implemented, utilizing two hidden layers, and one dropout layer. Multiple rounds of testing was done in order to achieve the most effective neural network. The first was to identify the most appropriate number of hidden units. Using other academic papers, various approaches were applied, and hidden units from a range of 10 - 350 were all tested.
+
+According various academic papers, although context of the case study could lead to vastly different results, the most appropriate range was likely to be found within the range of the number of inputs and number of outputs + number of inputs. This ended up being the case, as the most effective number of hidden units was 34.
+
+With only two hidden layers, and no dropout layer, the highest accuracy acchieved was 54.8%. When dropout layers were incorporated, it was found that accuracies in fact decreased by a consistent 2%. Only one dropout layer gave the highest accuracy at a value of 0.5 between the two hidden layers (in comparison to multiple dropout layers). However, it was clear that in this case study, zero dropout layers was more effective.
+
+In the document, it can be seen that some data cleaning is implemented. One of the 14 features is in fact dropped, as a quick investigation found that it was not providing significant results in the final classification. Although this was the case for an SVM and for Log Reg, the NN performed better when all 14 features were incorporated. This makes sense, as a NN is more effective with more complex systems.
