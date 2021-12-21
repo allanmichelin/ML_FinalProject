@@ -84,3 +84,19 @@ According various academic papers, although context of the case study could lead
 With only two hidden layers, and no dropout layer, the highest accuracy acchieved was 54.8%. When dropout layers were incorporated, it was found that accuracies in fact decreased by a consistent 2%. Only one dropout layer gave the highest accuracy at a value of 0.5 between the two hidden layers (in comparison to multiple dropout layers). However, it was clear that in this case study, zero dropout layers was more effective.
 
 In the document, it can be seen that some data cleaning is implemented. One of the 14 features is in fact dropped, as a quick investigation found that it was not providing significant results in the final classification. Although this was the case for an SVM and for Log Reg, the NN performed better when all 14 features were incorporated. This makes sense, as a NN is more effective with more complex systems.
+
+## Support Vector Classification (SVC)
+
+For this experiment, SVC from sklearn was used. Different values of the parameters c and gamma were tested to find the SVC with the highest test accuracy.
+The list of gamma and c values are as follows:
+```
+c_values = [0.001, 0.01,0.1,1,10]
+gamma_values = [0.001, 0.01, 0.1, 1]
+```
+The SVC with the highest accuracy had a gamma value of 0.001 and c value of 1.
+
+### Using Principle Components
+
+Using the optimal conditions for SVC found previously, we observed the relationship between the number of Principle Components (PCs) used and its accuracy.
+In general, as the number of PCs increased, accuracy increased. However, using the first 13 PCs seemed to have a minor improvement over using all 14; an accuracy of 51.6% against 51.2%. Whilst this change may be too minor to deduce anything conclusive from, it may also indicate that there is an input feature that is being harmful to the accuracy of the system.
+
